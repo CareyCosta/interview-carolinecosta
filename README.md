@@ -1,4 +1,4 @@
-#A description of your solution at a high-level, including any libraries or techniques used, roughly how it works, etc:
+##A description of your solution at a high-level, including any libraries or techniques used, roughly how it works, etc:
 
 I structured the project into two general folders: 
 *Pages
