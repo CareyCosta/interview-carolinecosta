@@ -1,6 +1,7 @@
-##A description of your solution at a high-level, including any libraries or techniques used, roughly how it works, etc:
+#A description of your solution at a high-level, including any libraries or techniques used, roughly how it works, etc:
 
 I structured the project into two general folders: 
+
 *Pages
 ** Home Page: where a user can search for a github user name and view a list of gists from that user.
 ** Gist Details Page: where a user can view all the files within a gist, as well as add and remove files to their list of Favorites
@@ -10,7 +11,7 @@ I structured the project into two general folders:
 ** File: Displays the information of a file within a Gist (used in the Gist Details page and the Favorites page)
 ** Navigation: always visible across the application, allows the user to navigate between the Home and Favorites pages
 
-Data Fetching:
+Data Fetching:\n
 All API calls are stored in the repository.ts file. For simplicity I opted to use the JS Fetch API as opposed to axios.
 
 State Management:
