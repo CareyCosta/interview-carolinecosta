@@ -1,26 +1,20 @@
 import { useState, useEffect, Fragment } from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
+import { GistPageProps } from "./types";
 import { File } from "../../components";
 import { getGist } from "../../repository";
-import {
-  GistType,
-  FavoriteType,
-  AddToFavoritesType,
-  RemoveFromFavoritesType,
-} from "../../types";
+import { GistDetailsType } from "../../types";
 
 function Gist({
   addToFavorites,
   removeFromFavorites,
   favorites,
-}: {
-  addToFavorites: AddToFavoritesType;
-  favorites: FavoriteType[];
-  removeFromFavorites: RemoveFromFavoritesType;
-}) {
+}: GistPageProps) {
   const { id } = useParams();
   const location = useLocation();
-  const [selectedGist, setSelectedGist] = useState<GistType | null>(null);
+  const [selectedGist, setSelectedGist] = useState<GistDetailsType | null>(
+    null
+  );
 
   useEffect(() => {
     document.title = "Gist Details";
@@ -28,7 +22,7 @@ function Gist({
 
   useEffect(() => {
     async function fetchGist() {
-      const gist = await getGist(id as GistType["id"]);
+      const gist = await getGist(id as GistDetailsType["id"]);
       if (gist) {
         setSelectedGist(gist);
       }

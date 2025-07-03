@@ -1,14 +1,8 @@
 import { useEffect, useMemo, Fragment } from "react";
 import { File } from "../../components";
-import { FavoriteType, RemoveFromFavoritesType } from "../../types";
+import { FavoritePageTypes } from "./types";
 
-function Favorites({
-  favorites,
-  removeFromFavorites,
-}: {
-  favorites: FavoriteType[];
-  removeFromFavorites: RemoveFromFavoritesType;
-}) {
+function Favorites({ favorites, removeFromFavorites }: FavoritePageTypes) {
   useEffect(() => {
     document.title = "Favorite Gists";
   }, []);

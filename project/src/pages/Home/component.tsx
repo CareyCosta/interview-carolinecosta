@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { GistType, SetUserNameType, HandleSearchType } from "../../types";
+import { HomePageProps } from "./types";
 
 function Home({
   userName,
@@ -8,13 +8,7 @@ function Home({
   allGists,
   handleSearch,
   isLoading,
-}: {
-  isLoading: boolean;
-  userName: string;
-  setUserName: SetUserNameType;
-  allGists: GistType[];
-  handleSearch: HandleSearchType;
-}) {
+}: HomePageProps) {
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setUserName(event.target.value);
   };
@@ -62,7 +56,7 @@ function Home({
           ) : (
             allGists.map(
               ({ id, description, files, created_at, updated_at }) => (
-                <li key={id}>
+                <li key={id} data-testid={id}>
                   <Link to={`/${id}`} className="gist-link">
                     <div className="isFlexible alignCenter justifySpaceBetween">
                       {!!files && (
