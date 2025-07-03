@@ -11,7 +11,6 @@ function Gist({
   favorites,
 }: GistPageProps) {
   const { id } = useParams();
-  const location = useLocation();
   const [selectedGist, setSelectedGist] = useState<GistDetailsType | null>(
     null
   );
@@ -29,24 +28,6 @@ function Gist({
     }
     fetchGist();
   }, [id]);
-
-  // Handle hash scrolling after content is loaded
-  useEffect(() => {
-    if (selectedGist && location.hash) {
-      // Small delay to ensure DOM is updated
-      const timer = setTimeout(() => {
-        const element = document.getElementById(location.hash.substring(1));
-        if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
-      }, 100);
-
-      return () => clearTimeout(timer);
-    }
-  }, [selectedGist, location.hash]);
 
   return (
     <div className="page">

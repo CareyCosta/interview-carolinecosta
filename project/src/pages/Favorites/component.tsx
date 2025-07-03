@@ -21,16 +21,16 @@ function Favorites({ favorites, removeFromFavorites }: FavoritePageTypes) {
     <div className="page">
       {users.length > 0 &&
         users.map((userName, index) => (
-          <>
+          <Fragment key={userName}>
             <h2 key={index}>
               Favorites from <strong>{userName}</strong>
             </h2>
             <ul>
               {favorites
                 .filter((fav) => fav.userName === userName)
-                .map(({ gistId, userName, fileName, fileContent }, index) => {
+                .map(({ gistId, fileName, fileContent }) => {
                   return (
-                    <Fragment key={index}>
+                    <Fragment key={`${gistId}-${fileName}`}>
                       <File
                         gistId={gistId}
                         fileName={fileName}
@@ -44,7 +44,7 @@ function Favorites({ favorites, removeFromFavorites }: FavoritePageTypes) {
                   );
                 })}
             </ul>
-          </>
+          </Fragment>
         ))}
     </div>
   );

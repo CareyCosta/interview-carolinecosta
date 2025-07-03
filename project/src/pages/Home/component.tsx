@@ -37,13 +37,7 @@ function Home({
           </form>
         </div>
       </header>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
+      <div className="isFlexible flexColumn alignCenter">
         {allGists.length > 0 && (
           <h2>
             Results for <strong>{allGists[0].owner.login}</strong>

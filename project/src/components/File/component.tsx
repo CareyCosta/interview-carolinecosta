@@ -70,12 +70,6 @@ function File({
     }
   }, [height, randomId]);
 
-  // useEffect(() => {
-  //   if (showModal) {
-
-  //   }
-  // }, [])
-
   const handleClickSeeMore = useCallback(() => {
     if (maxHeight === "90vh") {
       setMaxHeight("60vh");
