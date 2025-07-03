@@ -22,7 +22,7 @@ Initially, all files are truncated, but the user can click a "See more" button w
 Favorites:
 Files can be added and removed from the Gist Details page as well as the Favorites page. Users also have the ability to view the original gist that a file originated from, as well as expand the view of the file. If files are added from multiple authors, the list of Favorites will be categorized by the user.
 
-#What trade-offs you made
+#What trade-offs you made:
 I would have used Next.js because it includes Routing as well as server-side rendering, static site generation, and would be better for performance optimizations, but for the project but wanted to be mindful of time and prioritize the deliverables. I used create-react-app with tyepscript, using Next.js would have taken longer simply because I'm less familiar with it and would require a bit of research.
 A state management library such as zustand could be an improvement and would be best if the project were to scale, but for the given requirements this didn't feel necessary.
 
